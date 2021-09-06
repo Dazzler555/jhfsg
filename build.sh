@@ -45,6 +45,7 @@ do
      fi
 done
 
+cd
 git clone "$gurl" gurl
 cd gurl
 rm -f run.txt
