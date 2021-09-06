@@ -25,7 +25,7 @@ do
           wget "$url"
           mv rclone.conf $HOME/.config/rclone/rclone.conf
           rclone listremotes
-          rclone mount --daemon "movie:" ~/"$folder"/"$sub1" -vv
+          rclone mount "movie:" ~/"$folder"/"$sub1" -vv --vfs-cache-mode off --no-checksum --no-modtime --read-only --no-seek   
           
           rclone mount --daemon "tv:" ~/"$folder"/"$sub2" &
           
