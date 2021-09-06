@@ -1,0 +1,4 @@
+dist: focal
+
+script: 
+     - bash build.sh
