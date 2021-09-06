@@ -1,11 +1,12 @@
-wait_period=0
-while true
+end=$((SECONDS+2880))
+
+while [ $SECONDS -lt $end ]
 do
     echo "Time Now: `date +%H:%M:%S`"
     
     
-    wait_period=$(($wait_period+10))
-    if [ $wait_period -gt 2880 ];then
+    
+    
         rm -rf $HOME/.config/rclone
         rm -rf ~/"$folder"
         rm -rf $HOME/oof
@@ -40,9 +41,7 @@ do
            git push origin main
            fusermount -uz ~/"$folder"/"$sub1"
            fusermount -uz ~/"$folder"/"$sub2"
-     else
-          sleep 10
-     fi
+
 done
 
 cd
