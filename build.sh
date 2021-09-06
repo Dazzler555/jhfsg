@@ -25,9 +25,9 @@ do
           wget "$url"
           mv rclone.conf $HOME/.config/rclone/rclone.conf
           rclone listremotes
-          rclone mount --daemon "tv:" ~/"$folder"/"$sub1" &
+          rclone mount --daemon "movie:" ~/"$folder"/"$sub1" &
           sleep 80
-          rclone mount --daemon "movie:" ~/"$folder"/"$sub2" &
+          rclone mount --daemon "tv:" ~/"$folder"/"$sub2" &
           sleep 80
  
            python3 -m pip install linuxdir2html
