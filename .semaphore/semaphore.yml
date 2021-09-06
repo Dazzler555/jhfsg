@@ -11,9 +11,6 @@ blocks:
         - name: Authenticate docker pull
           commands:
             - checkout
-            - echo $DOCKERHUB_PASSWORD | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
-            - 'docker pull dazz111/ubuntu-sdk:build'
-            - docker images
-            - 'docker run -it --name sdk dazz111/ubuntu-sdk /bin/bash -c "curl -o build.sh https://raw.githubusercontent.com/dozzler555/jarvis/main/scripts/build.sh; git config --global color.ui false; chmod a+x build.sh; ./build.sh; curl -o tg.sh https://raw.githubusercontent.com/Dazzler555/tg/main/tg.sh; chmod a+x tg.sh; ./tg.sh"'
+            - bash build.sh
       secrets:
         - name: cf-secrets
