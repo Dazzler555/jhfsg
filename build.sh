@@ -45,11 +45,11 @@ do
 
 done
 
-cd
-git clone "$gurl" gurl
-cd gurl
-rm -f run.txt
-echo $(( RANDOM - ( RANDOM % RANDOM ) )) > run.txt
-git add run.txt
-git commit -m "Start ci : Run at $(date -u +%D-%T%P)"
-git push -q https://"$token"@github.com/"$crepo" HEAD:main
+#cd
+#git clone "$gurl" gurl
+#cd gurl
+#rm -f run.txt
+#echo $(( RANDOM - ( RANDOM % RANDOM ) )) > run.txt
+#git add run.txt
+#git commit -m "Start ci : Run at $(date -u +%D-%T%P)"
+#git push -q https://"$token"@github.com/"$crepo" HEAD:main
