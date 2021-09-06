@@ -26,12 +26,12 @@ do
           mv rclone.conf $HOME/.config/rclone/rclone.conf
           rclone listremotes
           rclone mount --daemon "movie:" ~/"$folder"/"$sub1" &
-          sleep 80
+          
           rclone mount --daemon "tv:" ~/"$folder"/"$sub2" &
-          sleep 80
+          
  
            python3 -m pip install linuxdir2html
-           linuxdir2html ~/"$folder" index
+           linuxdir2html ~/"$folder" index --verbose
            git clone https://"$user":"$token"@github.com/"$user"/"repo".git $HOME/oof
            rm -f $HOME/oof/index.html
            mv index.html $HOME/oof
