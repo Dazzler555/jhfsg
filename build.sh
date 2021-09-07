@@ -34,10 +34,14 @@ do
            python3 -m pip install linuxdir2html
            wget https://gist.githubusercontent.com/glowinthedark/625eb4caeca12c5aa52778a3b4b0adb4/raw/fb2b6fc89206212b35c3ce64b69e611f38c56d73/generate_directory_index_caddystyle.py
            python3 generate_directory_index_caddystyle.py ~/"$folder"
-git clone https://"$user":"$token"@github.com/"$user"/"repo".git $HOME/oof
-           rm -f $HOME/oof/index.html
-           mv index.html $HOME/oof
-           cd $HOME/oof
+git clone https://"$user":"$token"@github.com/"$user"/"repo".git ~/oof && cd $_
+           rm -f index.html
+           cd ..
+           cd ~/"$folder"/
+           python3 generate_directory_index_caddystyle.py .
+           mv index.html ~/oof
+           cd ~/oof
+           
            git add .
            git commit -m "Index Update at $(date "+%H:%M:%S   %d/%m/%y")"
            git push origin main
