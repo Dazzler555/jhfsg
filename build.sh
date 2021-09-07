@@ -25,15 +25,16 @@ do
           wget "$url"
           mv rclone.conf $HOME/.config/rclone/rclone.conf
           rclone listremotes
-          rclone mount --daemon "movie:" ~/"$folder"/"$sub1" --vfs-cache-mode off --no-checksum --read-only --no-seek &   
-          sleep 120
+         # rclone mount --daemon "movie:" ~/"$folder"/"$sub1" --vfs-cache-mode off --no-checksum --read-only --no-seek &   
+         ₹ sleep 120
           rclone mount --daemon "tv:" ~/"$folder"/"$sub2" --vfs-cache-mode off --no-checksum --read-only --no-seek &   
           sleep 120
           
  
            python3 -m pip install linuxdir2html
-           linuxdir2html ~/"$folder" index -vv
-           git clone https://"$user":"$token"@github.com/"$user"/"repo".git $HOME/oof
+           wget https://gist.githubusercontent.com/glowinthedark/625eb4caeca12c5aa52778a3b4b0adb4/raw/fb2b6fc89206212b35c3ce64b69e611f38c56d73/generate_directory_index_caddystyle.py
+           python3 generate_directory_index_caddystyle.py ~/"$folder"
+git clone https://"$user":"$token"@github.com/"$user"/"repo".git $HOME/oof
            rm -f $HOME/oof/index.html
            mv index.html $HOME/oof
            cd $HOME/oof
