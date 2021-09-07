@@ -26,9 +26,9 @@ do
           mv rclone.conf $HOME/.config/rclone/rclone.conf
           rclone listremotes
          # rclone mount --daemon "movie:" ~/"$folder"/"$sub1" --vfs-cache-mode off --no-checksum --read-only --no-seek &   
-         ₹ sleep 120
+         #sleep 120
           rclone mount --daemon "tv:" ~/"$folder"/"$sub2" --vfs-cache-mode off --no-checksum --read-only --no-seek &   
-          sleep 120
+          sleep 100
           
  
            python3 -m pip install linuxdir2html
